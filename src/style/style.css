@@ -1,0 +1,9 @@
+:root {
+  --color-main: #6000a0;
+  --color-black: #111111;
+  --color-white: #fefefe;
+
+  --radius: 10px;
+
+  --transition: 0.3s;
+}
