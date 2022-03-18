@@ -1,0 +1,6 @@
+.task {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 150px 1fr repeat(2, 100px);
+  grid-column-gap: 15px;
+}
