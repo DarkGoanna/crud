@@ -1,29 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import style from './TaskList.module.scss'
 import Task from '../Task/Task'
 import Button from '../UI/Button/Button'
 
-const TaskList = () => {
-  const [list, setList] = useState({})
-  const listKeys = Object.keys(list)
-
-  const add = (newText) => setList(() => {
-    const id = Date.now()
-    return { ...list, id: newText}
-  })
-  
+const TaskList = ({list, crud, ...props}) => {
+  const listItems = Object.keys(list)
   return (
     <>
-      {listKeys.length
+      {listItems.length
         ? <>
             <h2 className={style.title}>List of your tasks</h2>
-            {listKeys.map((task, i) => {
-              return <Task task={list[task]} number={i+1} key={list[task]}/>
-            })}
+            <div className={style.list}>
+              {listItems.map((taskID, i) => {
+                const task = {
+                  text: list[taskID], 
+                  id: taskID,
+                  number: i+1, 
+                }
+                return <Task key={taskID} task={task} crud={crud} />
+              })}
+            </div>
           </>
         : <>
             <h2 className={style.title}>There are no tasks</h2>
-            <Button onClick={() => {add('hi')}}>Add new task</Button>
+            <Button onClick={() => {crud.create('hi')}}>Add new task</Button>
           </>
       }
     </>

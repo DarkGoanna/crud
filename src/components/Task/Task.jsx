@@ -3,13 +3,13 @@ import style from './Task.module.scss'
 import Button from '../UI/Button/Button'
 
 
-const Task = ({task, number, ...props}) => {
+const Task = ({task, crud, ...props}) => {
   return (
     <div className={style.task}>
-      <div>{number}</div>
-      <div>{task}</div>
-      <Button>Edit</Button>
-      <Button>Delete</Button>
+      <div>{task.number}</div>
+      <div>{task.text}</div>
+      <Button onClick={()=>{crud.update(task.id, 'lol')}}>Edit</Button>
+      <Button onClick={()=>{crud.delete(task.id)}}>Delete</Button>
     </div>
   )
 }

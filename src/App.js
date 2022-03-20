@@ -1,6 +1,6 @@
 import React from 'react'
 import './style/style.css'
-import TaskList from './components/TaskList/TaskList'
+import TaskList from './components/TaskList/TaskListContainer'
 
 function App() {
   return (
