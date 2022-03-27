@@ -4,11 +4,20 @@
   --color-white: #fefefe;
 
   --radius: 10px;
-
-  --transition: 0.2s;
+  --transition: 0.25s;
+  --indent: 20px;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#app {
+  padding: var(--indent) 0;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
 }

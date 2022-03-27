@@ -1,0 +1,21 @@
+.textarea {
+  background-color: transparent;
+  border-radius: var(--radius);
+  color: var(--color-black);
+  padding: 5px 15px;
+  max-width: 100%;
+  width: 100%;
+  min-height: 40px;
+  resize: none;
+  border: 1px solid var(--color-main);
+  color: var(--color-black);
+  transition: var(--transition);
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--color-main);
+    transition: var(--transition);
+  }
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
